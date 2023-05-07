@@ -1,0 +1,74 @@
+###      REGISTER
+
+POST http://localhost:3000/api/user/register
+Content-Type: application/json
+
+{
+    "username" : "Mapsy",
+    "email" : "cyrilnkl56@gmail.com",
+    "password" : "Lolollo",
+    "age" : 13
+}
+
+###     LOGIN
+
+
+POST http://localhost:3000/api/user/login
+Content-Type: application/json
+
+{
+    "username" : "sasa",
+    "password" : "Lolollo"
+}
+
+### ADD A PARIS FOR A USER
+
+// le header : token est obligatoire si on veut utiliser cette route
+
+post http://localhost:3000/api/add_paris
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhc2EiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODI0NDk5OTB9.VHzKCHjz30bibaKmIeeyR6YMdJv6GxJHJBceKeC4w0s
+Content-Type: application/json
+
+{
+    "username" : "sasa",
+    "id_match" : 2,
+    "bet" : 200,
+    "team_bet" : 2
+}
+
+
+### UPDATE SCORE MATCH
+
+// le header : token est obligatoire si on veut utiliser cette route
+
+post http://localhost:3000/admin/update_score_paris
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhc2EiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODI0NDk5OTB9.VHzKCHjz30bibaKmIeeyR6YMdJv6GxJHJBceKeC4w0s
+Content-Type: application/json
+
+{
+    "username" : "sasa",
+    "id_match" : 2,
+    "score1": 0,
+    "score2": 2
+}
+
+
+
+###
+
+// le header : token est obligatoire si on veut utiliser cette route
+
+post http://localhost:3000/admin/add_matchs
+auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNhc2EiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2ODI0NDk5OTB9.VHzKCHjz30bibaKmIeeyR6YMdJv6GxJHJBceKeC4w0s
+Content-Type: application/json
+
+{
+    "username" : "sasa",
+    "TEAM1_ID": "PSG",
+    "TEAM2_ID": "Real Madrid",
+    "ODDS_1": 2.32,
+    "ODDS_2": 1.5,
+    "ODDS_0": 1.8,
+    "DATE_START": "2023-04-23 20:00:00",
+    "TYPE_SPORT": "FOOTBALL"
+}
